@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Vocacional - Proyecto de Grado</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="app-container">
+        <section id="pantalla-inicio" class="card active">
+            <h1>Descubre tu Camino Profesional</h1>
+            <p>Este test te ayudará a identificar tus fortalezas y te recomendará carreras disponibles en Colombia (SENA, Universidades) que se ajustan a tu perfil.</p>
+            <p class="nota">Basado en el modelo psicológico de John Holland.</p>
+            <button id="btn-comenzar" class="btn btn-primary">Comenzar Test</button>
+        </section>
+
+        <section id="pantalla-test" class="card hidden">
+            <div class="progress-container">
+                <span id="texto-progreso">Pregunta 1 de 30</span>
+                <div class="progress-bar">
+                    <div id="progreso" class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <h2 id="pregunta-texto" class="pregunta-animada">Cargando pregunta...</h2>
+            
+            <div class="opciones-container">
+                <button class="btn btn-opcion" data-valor="2">Estoy de acuerdo</button>
+                <button class="btn btn-opcion" data-valor="1">Estoy un poco de acuerdo</button>
+                <button class="btn btn-opcion" data-valor="0">No estoy de acuerdo</button>
+            </div>
+        </section>
+
+        <section id="pantalla-resultados" class="card hidden">
+            <h2>Tu Perfil Vocacional</h2>
+            <p>Este gráfico muestra tus principales áreas de interés según tus respuestas.</p>
+            
+            <div class="chart-container">
+                <canvas id="radarChart"></canvas>
+            </div>
+
+            <div id="analisis-perfil" class="analisis-perfil">
+                </div>
+
+            <h3>Carreras Recomendadas (Contexto Colombia)</h3>
+            <ul id="lista-carreras" class="lista-carreras">
+                </ul>
+
+            <button id="btn-reiniciar" class="btn btn-secondary">Realizar de nuevo</button>
+        </section>
+    </main>
+</body>
+</html>
